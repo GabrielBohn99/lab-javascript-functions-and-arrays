@@ -64,10 +64,71 @@ function sum(arr){
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
+  
+function averageNumbers(arrNum) {
+  if (arrNum.length === 0) {
+    return null;
+  }
+  let count = 0;
+  let size = arrNum.length;
+  let average = 0;
+
+  for (i = 0; i < size; i++) {
+    count += arrNum[i]; 
+  }
+
+  average = count / size;
+
+  return average;
+}
 
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
+function averageWordLength(arrWord) {
+  if (arrWord.length === 0) {
+    return null;
+  }
+  let count = 0;
+  let size = arrWord.length;
+  let average = 0;
+
+  for (i = 0; i < size; i++) {
+    count += arrWord[i].length; 
+  }
+
+  average = count / size;
+
+  return average;
+}
+
+function avg(arr) {
+  if (arr.length === 0) {
+    return null;
+  }
+  let counter = 0;
+  let size = arr.length;
+  let average = 0;
+  for (let i = 0; i < arr.length; i += 1) {
+    if (typeof arr[i] === 'string') {
+      counter += arr[i].length;
+    } else if (typeof arr[i] === 'boolean') {
+      if (arr[i]) {
+        counter += 1;
+      } else {
+        counter += 0;
+      }
+    }else if (typeof arr[i] === 'object' || typeof arr[i]=== 'array') {
+      throw console.error("Unexpected data type");
+      
+    } else {
+      counter += arr[i];
+    }
+  }
+
+  average = counter / size;
+  return +average.toFixed(2);
+}
 // Iteration #5: Unique arrays
 const wordsUnique = [
   'crab',
@@ -82,6 +143,10 @@ const wordsUnique = [
   'simple',
   'bring'
 ];
+
+function uniquifyArray(arrUnique) {
+
+}
 
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
